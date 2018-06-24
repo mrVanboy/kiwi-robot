@@ -35,6 +35,10 @@ func (*report) Execute() error {
 
 type place struct {}
 
+func (*place) Clone() IPlacer {
+	return new(place)
+}
+
 func (*place) SetX(x uint8) {
 }
 

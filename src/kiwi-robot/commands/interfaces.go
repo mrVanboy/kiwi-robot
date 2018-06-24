@@ -15,4 +15,5 @@ type IPlacer interface {
 	SetY(y uint8)
 	SetDir(dir string)
 	Execute() error
+	Clone() IPlacer
 }

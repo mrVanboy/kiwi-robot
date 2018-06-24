@@ -2,6 +2,7 @@ package robot
 
 import (
 	"errors"
+	"kiwi-robot/commands"
 )
 
 // directionNameMap holds inverted map of directionMap
@@ -24,6 +25,12 @@ type cmdPlace struct {
 	x, y uint8
 	dir string
 	robot *Robot
+}
+
+func (c *cmdPlace) Clone() commands.IPlacer {
+	newCmd := new(cmdPlace)
+	newCmd.robot = c.robot
+	return newCmd
 }
 
 func (c *cmdPlace) SetX(x uint8) {

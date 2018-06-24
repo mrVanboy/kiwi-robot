@@ -63,7 +63,7 @@ func parseSingleCommand(sCommand string, cmdsCallback Config) ICommand {
 		log.Debug(`unknown command ` + sCommand)
 		return nil
 	}
-	c := cmdsCallback.Place
+	c := cmdsCallback.Place.Clone()
 	for i, name := range r.SubexpNames() {
 		switch name {
 		case rNamePlaceX:
